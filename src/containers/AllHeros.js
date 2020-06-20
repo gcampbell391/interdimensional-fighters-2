@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import HomeHero from "../components/HomeHero";
 
 
-const AllHeros = () => {
-    const [heros, setHeros] = useState([]);
-
-    useEffect(() => {
-        fetch('https://floating-sea-80416.herokuapp.com/heros')
-            .then(resp => resp.json())
-            .then(data => {
-                setHeros(data)
-            })
-    }, [])
+const AllHeros = (props) => {
 
     return (
-        <div className="allHomeHeros">
-            {heros.map(hero => {
-                return <HomeHero hero={hero} key={hero.name} />
-            })}
-        </div>
+        < div className="allHomeHeros" >
+            {
+                props.heros.map(hero => {
+                    return (
+                        <HomeHero
+                            hero={hero}
+                            key={hero.name}
+                            handleHeroClick={props.handleHeroClick}
+                            handleHeroDetailClose={props.handleHeroDetailClose}
+                            renderHeroDetails={props.renderHeroDetails}
+                            currentHero={props.currentHero}
+                            startGameClick={props.startGameClick}
+                        />
+                    )
+                })
+            }
+        </div >
     )
 }
 

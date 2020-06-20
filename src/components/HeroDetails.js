@@ -3,7 +3,6 @@ import { Button, Image, Modal, Table } from 'semantic-ui-react'
 
 const HeroDetails = (props) => (
     <Modal open={props.renderHeroDetails}>
-        {console.log(props.hero)}
         <Modal.Header>{props.hero.name}</Modal.Header>
         <Modal.Content image>
             <Image className="heroDetailsImage" src={props.hero.hero_image} alt={props.hero.name} />
@@ -25,7 +24,7 @@ const HeroDetails = (props) => (
                         })}
                     </Table.Body>
                 </Table>
-                <Button content='Start Game' icon='gamepad' color='teal' />
+                <Button content='Start Game' icon='gamepad' color='teal' onClick={() => props.startGameClick()} />
                 <Button content='Go Back' icon='close' onClick={() => props.handleHeroDetailClose()} color='purple' />
             </Modal.Description>
         </Modal.Content>

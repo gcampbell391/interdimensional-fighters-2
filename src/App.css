@@ -154,3 +154,73 @@ p{
   color: darkcyan;
   
 }
+
+.battleCardsContainer{
+  display:flex;
+
+}
+
+.heroBattleCard{
+  width:50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.enemyBattleCard{
+  width:50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.gameLogger{
+  margin-top: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: -200px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 200px;
+}
+
+.enemyBattleImg{
+  width:200px;
+  height:200px;
+  display:block;
+  margin:auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2)
+}
+
+.heroBattleImg{
+  width:200px;
+  height:200px;
+  display:block;
+  margin:auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2)
+}
+.heroAttacksContainer{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.ui.violet.button {
+  display: block;
+  margin: auto;
+  width:250px;
+  margin-bottom: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2)
+}
+
+h3{
+  color:white;
+  text-align: center;
+  margin-top: -10px;
+}
