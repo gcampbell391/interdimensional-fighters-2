@@ -30,14 +30,51 @@ const GameBattle = (props) => {
     }, [])
 
     const handleHeroAttack = (e) => {
-        console.log(e.target)
-        if ((currentEnemyHP - parseInt(e.target.value)) > 0) {
-            setCurrentEnemyHP(currentEnemyHP - parseInt(e.target.value))
+        console.log("current hero hp: ", currentHeroHP)
+        let heroAttackValue = parseInt(e.target.value)
+        if (e.target.name === currentEnemy.weakness) {
+            heroAttackValue = heroAttackValue + 50
+            if (currentEnemyHP - heroAttackValue > 0) {
+                setCurrentEnemyHP(currentEnemyHP - heroAttackValue)
+                document.getElementById('mostRecentMove').innerText = `${props.hero.name} attacked with ${e.target.innerText} and caused ${heroAttackValue} damage. ${currentEnemy.name} is vulnerable to ${e.target.name}.`
+                enemyReturnAttack()
+            }
+            else {
+                swal(`Battle ${gameRound} won!`, `You defeated ${currentEnemy.name}!`, "success");
+            }
+        }
+        if (currentEnemyHP - heroAttackValue > 0) {
+            setCurrentEnemyHP(currentEnemyHP - heroAttackValue)
+            document.getElementById('mostRecentMove').innerText = `${props.hero.name} attacked with ${e.target.innerText} and caused ${heroAttackValue} damage`
+            enemyReturnAttack()
         }
         else {
             swal(`Battle ${gameRound} won!`, `You defeated ${currentEnemy.name}!`, "success");
         }
+    }
 
+    const enemyReturnAttack = () => {
+        setTimeout(() => {
+            const enemyAttack = currentEnemy.attacks[Math.floor(Math.random() * 5) + 0]
+            if (enemyAttack.attack_type === props.hero.weakness) {
+                let enemyAttackValue = enemyAttack.attack_value + 50
+                if (currentHeroHP - enemyAttackValue > 0) {
+                    setCurrentHeroHP(currentHeroHP - (enemyAttack.attack_value + 50))
+                    document.getElementById('mostRecentMove').innerText = `${currentEnemy.name} attacked with ${enemyAttack.name} and caused ${enemyAttack.attack_value + 50} damage`
+                }
+                else {
+                    swal(`Game Over!`, `You lost to ${currentEnemy.name}!`, "error");
+
+                }
+            }
+            if (currentHeroHP - enemyAttack.attack_value > 0) {
+                setCurrentHeroHP(currentHeroHP - enemyAttack.attack_value)
+                document.getElementById('mostRecentMove').innerText = `${currentEnemy.name} attacked with ${enemyAttack.name} and caused ${enemyAttack.attack_value} damage`
+            }
+            else {
+                swal(`Game Over!`, `You lost to ${currentEnemy.name}!`, "error");
+            }
+        }, 2000)
     }
     return (
         <div>

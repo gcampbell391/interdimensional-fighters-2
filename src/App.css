@@ -185,7 +185,7 @@ p{
   margin-bottom: -200px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.7);
-  height: 200px;
+  height: 120px;
 }
 
 .enemyBattleImg{
@@ -223,4 +223,10 @@ h3{
   color:white;
   text-align: center;
   margin-top: -10px;
+}
+
+#mostRecentMove{
+  color:white;
+  text-align: center;
+  font-size: 20px;
 }
