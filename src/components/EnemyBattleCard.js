@@ -12,7 +12,7 @@ const EnemyBattleCard = (props) => {
             <h3>Attacks</h3>
             <div className="enemyAttacksContainer">
                 {props.enemy && props.enemy.attacks.map(attack => {
-                    return <Button content={attack.name} icon='gamepad' color='violet' value={attack.attack_value} name={attack.attack_type} />
+                    return <Button content={attack.name} icon='gamepad' color='violet' value={attack.attack_value} name={attack.attack_type} disabled='true' />
                 })}
             </div>
         </div>

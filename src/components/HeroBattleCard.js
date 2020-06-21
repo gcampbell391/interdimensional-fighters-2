@@ -11,7 +11,7 @@ const HeroBattleCard = (props) => {
             <h3>Attacks</h3>
             <div className="heroAttacksContainer">
                 {props.hero.attacks.map(attack => {
-                    return <Button content={attack.name} icon='gamepad' color='violet' value={attack.attack_value} name={attack.attack_type} onClick={(event) => props.handleHeroAttack(event)} />
+                    return <Button className="heroAttackBtns" content={attack.name} icon='gamepad' color='violet' value={attack.attack_value} name={attack.attack_type} onClick={(event) => props.handleHeroAttack(event)} />
                 })}
             </div>
         </div>
