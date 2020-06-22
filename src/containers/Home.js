@@ -24,6 +24,7 @@ const Home = (props) => {
                 <h2 id="homeHeader">Welcome to</h2>
                 <h1 >Interdimensional Fighters</h1>
                 <h2 id="homeTitle">Please Select a Fighter to Begin</h2>
+                <h2 id="mobileTitle">🚧 Coming soon to Mobile Devices 🚧</h2>
             </Anime>
             {props.loadingHeros ? <Loading /> : <AllHeros heros={props.heros} handleHeroClick={props.handleHeroClick} handleHeroDetailClose={props.handleHeroDetailClose} renderHeroDetails={props.renderHeroDetails} currentHero={props.currentHero} startGameClick={props.startGameClick} />}
         </div>
