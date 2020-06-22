@@ -1,13 +1,13 @@
 import React from "react"
 import { Button } from 'semantic-ui-react'
 
+
 const HeroBattleCard = (props) => {
-    console.log('Hero :', props.hero)
     return (
         <div className="heroBattleCard">
             <h2>{props.hero.name}</h2>
             <img className="heroBattleImg" src={props.hero.hero_image} alt={props.hero.name} />
-            <h2>HP: {props.currentHeroHP}</h2>
+            <h2 id="currentHeroHP">♡ {props.currentHeroHP}</h2>
             <h3>Attacks</h3>
             <div className="heroAttacksContainer">
                 {props.hero.attacks.map(attack => {
