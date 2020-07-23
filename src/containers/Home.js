@@ -2,6 +2,7 @@ import React from "react"
 import AllHeros from "../containers/AllHeros"
 import Loading from "../components/Loading"
 import ReactAnime from 'react-animejs'
+import ReactPlayer from 'react-player'
 
 
 
@@ -27,6 +28,16 @@ const Home = (props) => {
                 <h2 id="mobileTitle">🚧 Coming soon to Mobile Devices 🚧</h2>
             </Anime>
             {props.loadingHeros ? <Loading /> : <AllHeros heros={props.heros} handleHeroClick={props.handleHeroClick} handleHeroDetailClose={props.handleHeroDetailClose} renderHeroDetails={props.renderHeroDetails} currentHero={props.currentHero} startGameClick={props.startGameClick} />}
+
+            <div className='video-demo-container'>
+                <ReactPlayer
+                    url='https://www.youtube.com/watch?v=Qe6pRy8lyxk&feature=youtu.be'
+                    controls={true}
+                    width={600}
+                    height={400}
+                    pip={true}
+                />
+            </div>
         </div>
     )
 }

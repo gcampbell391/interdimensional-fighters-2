@@ -63,7 +63,7 @@ h2{
   text-align: center;
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-  margin-top: 300px;
+  margin-top: 200px;
   padding: 16px 0;
 }
 
@@ -71,6 +71,7 @@ h2{
   display: flex;
   margin-right: 200px;
   margin-left: 200px;
+  margin-bottom: 250px;
   border-radius: 10px;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -314,6 +315,12 @@ text-align: left;
   margin-left: 200px ;
   margin-top: -30px;
 }
+
+.video-demo-container{
+  display:flex;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 750px) {
   .header{
     padding-top: 20px;
